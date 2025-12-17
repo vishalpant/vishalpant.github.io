@@ -2,6 +2,7 @@ import { useState, useEffect, useRef } from 'react';
 import { Box, Typography, Fade, Button } from '@mui/material';
 import { portfolio } from "../data/portfolio";
 import { fetchGreetings } from '../services/greetings';
+import { Link } from 'react-router-dom';
 
 export default function Home() {
     const [greetings, setGreetings] = useState(["Hello"]);
@@ -100,9 +101,10 @@ export default function Home() {
             </Typography>
             <Button
                 variant="contained"
-                href="/about"
+                component={Link}
                 rel="noopener noreferrer"
                 sx={{ mt: 4 }}
+                to="/about"
             >
                 About Me
             </Button>
